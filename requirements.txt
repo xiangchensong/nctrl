@@ -1,0 +1,13 @@
+pytorch-lightning==1.9.*
+tqdm
+numpy
+scipy
+seaborn
+tensorboard
+wandb
+xvfbwrapper
+scikit-learn
+matplotlib
+opencv-python
+PyYAML
+gymnasium

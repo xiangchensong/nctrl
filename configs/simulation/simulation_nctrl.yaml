@@ -1,0 +1,30 @@
+dataloader:
+  train_batch_size: 64
+  valid_batch_size: 256
+  num_workers: 8
+  pin_memory: true
+dataset:
+  data_path: data/simulation/z8_c5_lags2_len4_Nlayer3/arhmm_pnl_change_gaussian_ts
+  n_validation: 1024
+model: "NCTRL"
+model_kwargs:
+  x_dim: 8
+  z_dim: 8
+  lags: 2
+  n_class: 5
+  hidden_dim: 128
+  embedding_dim: 2
+  lr: 5.0e-4
+  beta: 2.0e-3
+  gamma: 2.0e-2
+  correlation: 'Pearson'
+  hmm_mode: 'mle_scaled:H'
+trainer:
+  accelerator: gpu
+  default_root_dir: outputs/simulation/z8_c5_lags2_len4_Nlayer3/nctrl
+  devices:
+  - 0
+  fast_dev_run: false
+  max_epochs: 200
+  val_check_interval: 0.1
+
